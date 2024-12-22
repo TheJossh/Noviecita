@@ -236,314 +236,172 @@
   }
   
 
+  /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
 
-  /* Animación de búsqueda (puedes agregar un input con una animación de búsqueda) */
-  .search-bar {
-    width: 300px;
-    margin: 20px auto;
-    padding: 10px;
-    border-radius: 25px;
-    border: 2px solid #f06292;
-    transition: width 0.4s ease, border-color 0.3s ease;
-  }
-  
-  .search-bar:focus {
-    width: 350px;
-    border-color: #d81b60;
-  }
-  
-/* Reset de márgenes y paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body y fondo */
-  body {
-    background-image: url('img/Wallpaper-Hello-Kitty-Pictures-HD.jpg');
-    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
-    background-position: center; /* Centra la imagen */
-    background-attachment: fixed; /* Fija la imagen cuando se hace scroll */
-    font-family: 'Arial', sans-serif;
-    background-color: #fce4ec; /* Rosa pastel suave */
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Título principal */
-  .jitter-text {
-    font-size: 6vw; /* Ajusta el tamaño según el ancho de la pantalla */
-    font-weight: bold;
-    color: #f06292; /* Rosa más intenso */
-    text-align: center;
-    margin-top: 30px;
-    animation: jitter 0.5s infinite alternate;
-  }
-  
-  /* Animación de jitter */
-  @keyframes jitter {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(-10px); }
-    100% { transform: translateX(10px); }
-  }
-  
-  /* Estilo básico del carrusel */
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+/* Cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-bottom: 2px solid #ddd;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.card-content p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Quiénes somos */
+.who-we-are {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #f9f9f9;
+}
+
+.text-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.video-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+video {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Sección de comentarios */
+.comment-section {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-textarea {
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.submit-btn {
+  padding: 10px;
+  font-size: 1.2em;
+  background-color: #ff6347;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #ff4500;
+}
+
+/* Media Queries para móviles y tablets */
+@media (max-width: 768px) {
   .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin: 20px 0;
-    max-width: 900px;
-    margin: 0 auto;
+    flex-direction: column;
   }
-  
-  .carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    flex-wrap: nowrap; /* Evita que las imágenes se apilen en pantallas pequeñas */
-  }
-  
+
   .carousel-item {
-    min-width: 100%;
-    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
-  
-  .carousel-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Responsividad del carrusel */
-  @media (max-width: 768px) {
-    .carousel {
-      flex-wrap: wrap; /* Permite que las imágenes se apilen en pantallas pequeñas */
-    }
-  
-    .carousel-item {
-      min-width: 100%;
-    }
-  }
-  
-  /* Cards */
+
   .cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
-    gap: 20px;
-    margin: 30px 10%;
-  }
-  
-  .card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px; /* Ancho fijo */
-    height: 400px; /* Alto fijo */
-  }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  .card-content {
-    padding: 20px;
-    background-color: #fce4ec;
-  }
-  
-  .card-content h3 {
-    font-size: 3vw;
-    color: #f06292;
-    margin-bottom: 10px;
-  }
-  
-  .card-content p {
-    font-size: 2vw;
-    color: #666;
-  }
-  
-  /* Responsividad de las cards */
-  @media (max-width: 768px) {
-    .cards-container {
-      grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas más pequeñas */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .cards-container {
-      grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
-    }
-  
-    .card {
-      width: 90%; /* Ajusta el ancho de las cards */
-      height: auto; /* Ajusta la altura automáticamente */
-    }
-  }
-  
-  /* Sección de comentarios */
-  .comment-section {
-    text-align: center;
-    margin: 50px auto;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    width: 80%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .comment-section h3 {
-    font-size: 1.5rem;
-    color: #f06292;
-    margin-bottom: 20px;
-  }
-  
-  .comment-section textarea {
-    width: 80%;
-    height: 150px;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 2px solid #f06292;
-    font-size: 1rem;
-    color: #333;
-    transition: border-color 0.3s ease;
-  }
-  
-  .comment-section textarea:focus {
-    border-color: #d81b60;
-    outline: none;
-  }
-  
-  .comment-section button {
-    padding: 10px 20px;
-    background-color: #f06292;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .comment-section button:hover {
-    background-color: #d81b60;
-  }
-  
-  /* Responsividad de la sección de comentarios */
-  @media (max-width: 768px) {
-    .comment-section {
-      width: 90%;
-      padding: 20px;
-    }
-  
-    .comment-section textarea {
-      width: 100%;
-    }
-  
-    .comment-section button {
-      width: 100%;
-    }
-  }
-  
-  /* Sección Quiénes somos */
-  .who-we-are {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
   }
-  
-  .text-content {
-    flex: 1;
-    padding-right: 20px;
+
+  .card {
+    width: 100%;
   }
-  
-  .text-content h2 {
-    font-size: 2rem;
-    color: #f06292;
+
+  .who-we-are {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-content, .video-content {
+    flex: none;
+    width: 100%;
     margin-bottom: 20px;
   }
-  
-  .text-content p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
+
+  .jitter-text {
+    font-size: 2em;
   }
-  
-  .video-content {
-    flex: 1;
-    max-width: 600px;
-    overflow: hidden;
-    position: relative;
+}
+
+@media (max-width: 480px) {
+  .jitter-text {
+    font-size: 1.5em;
   }
-  
-  .video-content video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
+
+  .card-content h3 {
+    font-size: 1em;
   }
-  
-  /* Responsividad */
-  @media (max-width: 768px) {
-    .who-we-are {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .text-content {
-      text-align: center;
-      padding-right: 0;
-    }
-  
-    .video-content {
-      max-width: 90%;
-      margin-top: 20px;
-    }
+
+  .card-content p {
+    font-size: 0.9em;
   }
-  
-  /* Animación de búsqueda (puedes agregar un input con una animación de búsqueda) */
-  .search-bar {
-    width: 300px;
-    margin: 20px auto;
-    padding: 10px;
-    border-radius: 25px;
-    border: 2px solid #f06292;
-    transition: width 0.4s ease, border-color 0.3s ease;
+
+  .comment-textarea {
+    font-size: 0.9em;
   }
-  
-  .search-bar:focus {
-    width: 350px;
-    border-color: #d81b60;
+
+  .submit-btn {
+    font-size: 1em;
   }
-  
-  /* Media query para pantallas pequeñas */
-  @media (max-width: 768px) {
-    .cards-container {
-      grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas más pequeñas */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .cards-container {
-      grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
-    }
-  }
-  
-  
+}
